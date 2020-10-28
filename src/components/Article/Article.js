@@ -4,7 +4,7 @@ import className from 'classnames';
 import './Article.css'
 function Article(props){
     const {arts} = props;
-    const {id, title, published} = arts;
+    const {id, title, category,content,published} = arts;
 
     const [selected , setselected] = useState(false);
     console.log(selected);
@@ -21,6 +21,8 @@ function Article(props){
             <div className="Article__componante">
                 <p>{id}</p>
                 <p>{title}</p>
+                <p>{category}</p>
+                <p>{content}</p>
                 <p>{published ? 'published' : 'notpublished'}</p>
             </div>
         </div>

@@ -7,7 +7,7 @@
     background-color: aquamarine;
 }
 .Article__componante{
-    display: flex;
+    display: block;
     justify-content: space-between;
 }
 .Article__selected{

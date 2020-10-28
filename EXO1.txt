@@ -1,3 +1,4 @@
+EXO 1
 Créer un composant Card
 
 props:
@@ -14,3 +15,15 @@ html:
 * ajouter un bouton pour augmenter la quantité de 1
 * ajouter un bouton pour diminuer la quantité de 1
 * afficher le total
+
+EXO 2
+Creer un composant Title et affiche dans app
+
+props:
+* title
+
+effect:
+* modifier le titre de la page (head) => document.title=....
+
+html
+* affiche le titre dans un h1

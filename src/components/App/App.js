@@ -1,28 +1,22 @@
+import {useEffect,useState} from 'react';
 import List from '../List/List.js'
 import Listitem from '../Listitem/Listitem.js'
+import Title from '../Title/Title.js'
 function App() {
-    const articles = [
-        {
-            "id":1,
-            "title":"1er article",
-            "published":false
-        },
-        {
-            "id":2,
-            "title":"2er article",
-            "published":true
-        },
-        {
-            "id":3,
-            "title":"3er article",
-            "published":false
-        },
-        {
-            "id":4,
-            "title":"4er article",
-            "published":false
-        }
-    ];
+    const [titre, setTitre]=useState("projet cour");
+    const [articles,setarticles]= useState([]);
+    const url = 'http://localhost:3001/articles';
+    useEffect(()=> {
+        fetch(url)
+            .then(reponse => reponse.json())
+            .then(data => setarticles(data));
+    },[url,setarticles]);
+
+    useEffect(()=>{
+        setTitre(titre,document.title=titre);
+    },[titre])
+
+
     const produit = [
         {   
             "id":1,
@@ -50,8 +44,10 @@ function App() {
             "name":"PC4"
         }
     ]
+    
     return (
         <div>
+            <Title titre={titre}></Title>
             <List articles={articles}></List>
             <Listitem produit={produit}></Listitem>
         </div>

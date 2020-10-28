@@ -1,0 +1,15 @@
+.Article__title{
+    color: black;
+    margin: 0%;
+    text-transform: uppercase;
+}
+.Article{
+    background-color: aquamarine;
+}
+.Article__componante{
+    display: flex;
+    justify-content: space-between;
+}
+.Article__selected{
+    background-color: red;
+}

@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
+import List from '../List/List.js'
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code>save  toto to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const articles = [
+        {
+            "id":1,
+            "title":"1er article",
+            "published":false
+        },
+        {
+            "id":2,
+            "title":"2er article",
+            "published":true
+        },
+        {
+            "id":3,
+            "title":"3er article",
+            "published":false
+        },
+        {
+            "id":4,
+            "title":"4er article",
+            "published":false
+        }
+    ];
+    return (
+        <div>
+            <List articles={articles}></List>
+            
+        </div>
+    );
 }
-
 export default App;

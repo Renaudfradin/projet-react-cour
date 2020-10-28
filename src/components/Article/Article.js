@@ -4,6 +4,7 @@ import './Article.css'
 function Article(props){
     const {arts} = props;
     const {id, title, published} = arts;
+    
     const [selected , setselected] = useState(false);
     console.log(selected);
 

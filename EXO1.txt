@@ -1,0 +1,16 @@
+Créer un composant Card
+
+props:
+* product
+    - price
+    - name
+
+state:
+* quantity
+
+html: 
+* afficher le nom du produit
+* afficher la quantity
+* ajouter un bouton pour augmenter la quantité de 1
+* ajouter un bouton pour diminuer la quantité de 1
+* afficher le total

@@ -4,6 +4,7 @@ import useCategory from '../../hooks/useCategory/useCategory.js'
 import List from '../List/List.js'
 import Listitem from '../Listitem/Listitem.js'
 import Title from '../Title/Title.js'
+import Filter from '../Filter/Filter.js'
 function App() {
     const [titre, setTitre]=useState("projet cour");
     const articles = useArticle();
@@ -41,11 +42,19 @@ function App() {
             "name":"PC4"
         }
     ]
+    const [title, settitle]=useState('Article');
+    function handlchange(event){
+        console.log(event.target.value);
+        settitle(event.target.value);
+    }
     
+    const filteredarticle = articles
+        .filter(art => art.title.includes(title));
     return (
         <div>
+            <Filter title={title} handlchange={handlchange}></Filter>
             <Title titre={titre}></Title>
-            <List articles={articles} categories={categories}></List>
+            <List articles={filteredarticle} categories={categories}></List>
             <Listitem produit={produit}></Listitem>
         </div>
     );

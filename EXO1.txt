@@ -27,3 +27,9 @@ effect:
 
 html
 * affiche le titre dans un h1
+
+
+EXO 3 
+charger les categories :http://localhost:3001/categories
+Et afficher dans le composant Article le titre de la categories a la place de son ID
+

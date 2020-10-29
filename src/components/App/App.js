@@ -5,12 +5,19 @@ import Title from '../Title/Title.js'
 function App() {
     const [titre, setTitre]=useState("projet cour");
     const [articles,setarticles]= useState([]);
-    const url = 'http://localhost:3001/articles';
+    const [categories,setcategories]=useState([]);
+
     useEffect(()=> {
-        fetch(url)
+        fetch('http://localhost:3001/articles')
             .then(reponse => reponse.json())
             .then(data => setarticles(data));
-    },[url,setarticles]);
+    },[setarticles]);
+
+    useEffect(()=> {
+        fetch('http://localhost:3001/categories')
+            .then(reponse => reponse.json())
+            .then(data => setcategories(data))
+    },[setcategories]);
 
     useEffect(()=>{
         setTitre(titre,document.title=titre);
@@ -48,7 +55,7 @@ function App() {
     return (
         <div>
             <Title titre={titre}></Title>
-            <List articles={articles}></List>
+            <List articles={articles} categories={categories}></List>
             <Listitem produit={produit}></Listitem>
         </div>
     );

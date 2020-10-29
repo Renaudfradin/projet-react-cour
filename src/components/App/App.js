@@ -1,23 +1,13 @@
 import {useEffect,useState} from 'react';
+import useArticle from '../../hooks/useArticle/useArticle.js'
+import useCategory from '../../hooks/useCategory/useCategory.js'
 import List from '../List/List.js'
 import Listitem from '../Listitem/Listitem.js'
 import Title from '../Title/Title.js'
 function App() {
     const [titre, setTitre]=useState("projet cour");
-    const [articles,setarticles]= useState([]);
-    const [categories,setcategories]=useState([]);
-
-    useEffect(()=> {
-        fetch('http://localhost:3001/articles')
-            .then(reponse => reponse.json())
-            .then(data => setarticles(data));
-    },[setarticles]);
-
-    useEffect(()=> {
-        fetch('http://localhost:3001/categories')
-            .then(reponse => reponse.json())
-            .then(data => setcategories(data))
-    },[setcategories]);
+    const articles = useArticle();
+    const categories = useCategory();
 
     useEffect(()=>{
         setTitre(titre,document.title=titre);

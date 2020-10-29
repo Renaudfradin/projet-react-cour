@@ -7,9 +7,7 @@ function Article(props){
     const {category: categoryID,id, title ,content,published} = arts;
     const [selected , setselected] = useState(false);
     const category = categories.find(cat => cat.id === categoryID);
-    //console.log(selected);
-
-
+    
     function clickdiv(){
         console.log("clickkkkkk");
         setselected(!selected);

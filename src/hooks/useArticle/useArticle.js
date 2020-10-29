@@ -1,9 +1,9 @@
 import {useEffect,useState} from 'react';
+import {getarticles} from '../../service/articles/articles.js'
 function useArticle(){
     const [articles,setarticles]= useState([]);
     useEffect(()=> {
-        fetch('http://localhost:3001/articles')
-            .then(reponse => reponse.json())
+        getarticles()
             .then(data => setarticles(data));
     },[setarticles]);
     return articles;

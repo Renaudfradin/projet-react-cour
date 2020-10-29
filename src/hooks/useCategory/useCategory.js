@@ -1,9 +1,9 @@
 import {useEffect,useState} from 'react';
+import {getcategories} from '../../service/categories/categories.js'
 function useCategory() {
     const [categories,setcategories]=useState([]);
     useEffect(()=> {
-        fetch('http://localhost:3001/categories')
-            .then(reponse => reponse.json())
+        getcategories()
             .then(data => setcategories(data))
     },[setcategories]);
     return categories;

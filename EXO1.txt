@@ -37,3 +37,13 @@ EXO 4
 filtrer la liste des Article avec :
 * un select sur les categories
 * des radios pour filtre sur l'etat published
+
+EXO 5
+Creer un composant Cart et l'afficher dans App a la place des composant CartItem
+
+rendre:
+* afficher les composant CartItem
+* afficher le total
+
+state
+* Cart (products + quantity )

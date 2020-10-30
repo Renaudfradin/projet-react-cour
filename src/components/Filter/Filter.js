@@ -1,10 +1,15 @@
 //import {useState} from 'react';
+import {useRef,useEffect}from'react'
 function Filter(props) {
-    const {categories,category,published,title,handleFilterChange } = props
+    const {categories,category,published,title,handleFilterChange } = props;
+    const inputRef = useRef(null);
+    useEffect(()=>{
+        inputRef.current.focus();
+    },[inputRef])
     return(
         <div>
-      <input name="title" type="text" value={title} onChange={handleFilterChange}/>
-      
+      <input name="title" type="text" value={title} onChange={handleFilterChange} ref={inputRef}/>
+
       <select name="category" value={category} onChange={handleFilterChange}>
         <option value=""></option>
         {categories.map(cat => <option value={cat.id} key={cat.id}>{cat.title}</option>)}

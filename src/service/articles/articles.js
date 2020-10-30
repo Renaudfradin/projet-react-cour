@@ -14,7 +14,10 @@ export function createarticle(article) {
         headers:{
             'Content-Type':'application/json'
         },
-        body: JSON.stringify(article)
+        body: JSON.stringify({
+            ...article,
+            category: Number(article.category),
+            published: Boolean(article.published)})
     })
     .then(reponse => reponse.json());
 }
@@ -22,6 +25,20 @@ export function createarticle(article) {
 export function updatearticle(article) {
     return fetch('http://localhost:3001/articles/'+ article.id,{
         method:'PUT',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body: JSON.stringify({
+            ...article,
+            category: Number(article.category),
+            published: Boolean(article.published)})
+    })
+    .then(reponse => reponse.json());
+}
+
+export function removearticle(article) {
+    return fetch('http://localhost:3001/articles/'+ article.id,{
+        method:'DELETE',
         headers:{
             'Content-Type':'application/json'
         },

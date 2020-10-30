@@ -17,22 +17,6 @@ function ArticlePage() {
         setTitre(titre,document.title=titre);
     },[titre])
 
-
-    
-
-    /*
-    const [title, settitle]=useState('Article');
-    function handlchange(event){
-        console.log(event.target.value);
-        settitle(event.target.value);
-    }
-
-    const [categorys, setcategorys]=useState('');
-    function handlchangecat(event){
-        setcategorys(event.target.value);
-    }
-    */
-
     const [filters, setFilters] = useState({
         title: '',
         category: '',

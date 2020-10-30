@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import className from 'classnames';
 import {Link} from 'react-router-dom';
+//import {removearticle } from '../../service/articles/articles';
+
 
 import './Article.css'
 function Article(props){
@@ -14,6 +16,10 @@ function Article(props){
         setselected(!selected);
     }
 
+    function removeart(event) {
+        event.stopPropagation();
+    }
+
     return(
         <div className={className("Article", {"Article__selected":selected})} onClick={clickdiv}>
             <div className="Article__componante">
@@ -23,6 +29,9 @@ function Article(props){
                 <p>{content}</p>
                 <p>{published ? 'published' : 'notpublished'}</p>
                 <Link to={`/article/${id}`}>edit</Link>
+                <div>
+                    <button onClick={removeart}>sup</button>
+                </div>
             </div>
         </div>
     );

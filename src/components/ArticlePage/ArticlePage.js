@@ -1,4 +1,4 @@
-import {useEffect,useState} from 'react';
+import {useEffect,useState,Fragment} from 'react';
 import useArticle from '../../hooks/useArticle/useArticle.js'
 import useCategory from '../../hooks/useCategory/useCategory.js'
 import List from '../List/List.js'
@@ -8,6 +8,8 @@ import Cart from '../Cart/Cart.js'
 import Title from '../Title/Title.js'
 import Filter from '../Filter/Filter.js'
 import { Link } from 'react-router-dom'
+import  createContext  from '../../contexts/categories.js'
+console.log('App',createContext);
 function ArticlePage() {
     const [titre, setTitre]=useState("projet cour");
     const articles  = useArticle();
@@ -36,7 +38,7 @@ function ArticlePage() {
 
 
     return (
-        <div>
+        <Fragment>
             <Link to="/article">nouveau article</Link>
             <Containerss> 
                 <Filter categories={categories} category={filters.category} published={filters.published} title={filters.title} handleFilterChange={handleFilterChange}></Filter>
@@ -44,7 +46,7 @@ function ArticlePage() {
             </Containerss>
             <Title titre={titre}></Title>
             <Cart></Cart>
-        </div>
+        </Fragment>
     );
 }
 export default ArticlePage;

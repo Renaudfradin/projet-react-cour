@@ -47,3 +47,21 @@ rendre:
 
 state
 * Cart (products + quantity )
+
+EXO 6 
+Detecter si pa de gagnant et afficher un message + bouton restart
+
+Afficher "X" "O" a la place de 1 et 2
+
+Detecter les autre ca de victoire
+
+EXO timer
+
+HTML
+* 1 bouton start = lance timer
+* 1 bouton pause
+* 1 bouton stop => mets en pause + remet a 0 le timer
+* affiche le timer
+
+Pour lancer un timer => const id =setInterval(fn, time);
+Pour arreter: clearInterval(id);

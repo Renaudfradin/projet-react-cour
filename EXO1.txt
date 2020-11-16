@@ -1,0 +1,49 @@
+EXO 1
+Créer un composant Card
+
+props:
+* product
+    - price
+    - name
+
+state:
+* quantity
+
+html: 
+* afficher le nom du produit
+* afficher la quantity
+* ajouter un bouton pour augmenter la quantité de 1
+* ajouter un bouton pour diminuer la quantité de 1
+* afficher le total
+
+EXO 2
+Creer un composant Title et affiche dans app
+
+props:
+* title
+
+effect:
+* modifier le titre de la page (head) => document.title=....
+
+html
+* affiche le titre dans un h1
+
+
+EXO 3 
+charger les categories :http://localhost:3001/categories
+Et afficher dans le composant Article le titre de la categories a la place de son ID
+
+EXO 4
+filtrer la liste des Article avec :
+* un select sur les categories
+* des radios pour filtre sur l'etat published
+
+EXO 5
+Creer un composant Cart et l'afficher dans App a la place des composant CartItem
+
+rendre:
+* afficher les composant CartItem
+* afficher le total
+
+state
+* Cart (products + quantity )
